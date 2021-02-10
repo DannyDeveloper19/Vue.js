@@ -1,0 +1,145 @@
+.btn-right {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.btn-left {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+
+/* Modal Style */
+
+.dialog {
+    max-width: 800px;
+    margin: 1.75rem auto;
+}
+
+.content {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-clip: padding-box;
+    outline: 0;
+}
+
+.video-player {
+    width: 100%;
+}
+
+.c-video {
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* ******************************** */
+
+.playlist {
+    background: url('../../images/folder-red-video-icon-50x45.png');
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+}
+
+.video {
+    background: url('../../images/video-fileicon-50x50.jpg');
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 54px;
+    margin: auto;
+}
+
+.list-group-item-site-border-out {
+    position: relative;
+    display: block;
+    padding: 15px 5px 0;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-left: 1px solid #dbdbdb;
+    border-right: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    /* border-left: 0;
+    border-right: 0;
+    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.235); */
+}
+
+.list-group-item-site-border-out-2 {
+    position: relative;
+    display: block;
+    padding: 15px 15px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-left: 1px solid #dbdbdb;
+    border-right: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.list-group-item-site-border-out:hover {
+    border-left: 0;
+    border-right: 0;
+    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.235);
+}
+
+.BtnGroup {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.py-1 {
+    padding-top: 4px!important;
+    padding-bottom: 4px!important;
+}
+
+.flex-order-1 {
+    order: 1!important;
+}
+
+.flex-justify-between {
+    justify-content: space-between!important;
+}
+
+.separate {
+    vertical-align: middle;
+    border: solid #ddd;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 6px;
+    margin-right: 10px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+    .py-md-0 {
+        padding-top: 0!important;
+        padding-bottom: 0!important;
+    }
+    .flex-md-order-2 {
+        order: 2!important;
+    }
+    .playlist {
+        background: url('../../images/folder-red-video-icon-100x91.png');
+        width: 100px;
+        height: 91px;
+    }
+    .video {
+        background: url('../../images/video-fileicon-100x100.jpg');
+        width: 84px;
+        height: 92px;
+    }
+}
+
+@media (min-width: 544px) {
+    .flex-sm-grow-0 {
+        flex-grow: 0!important;
+    }
+}

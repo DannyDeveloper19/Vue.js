@@ -1,0 +1,15 @@
+{
+    "name": "dhsim/video-embed",
+    "description": "Creating a video embed plugin.",
+    "type": "project",
+    "license": "GPL",
+    "authors": [{
+        "name": "Danny Hernandez",
+        "email": "php7mvc.developers@gmail.com"
+    }],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": { "bin\\": "./bin" }
+    }
+}
