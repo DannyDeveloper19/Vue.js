@@ -587,7 +587,7 @@ Vue.component('playlist', {
                     </th>
                 </tfoot>
             </table>
-            <div class="modal" id="insert_video" role="dialog">
+            <div ref="insert_video" class="modal fade" id="insert_video" role="dialog">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                     <div class="modal-header">
@@ -598,7 +598,7 @@ Vue.component('playlist', {
                     </div>
                     <div class="modal-body">
                         <div class="alert alert-danger" role="alert" v-show=" errors.length > 0">
-                            <div v-for="error of errors" class="text-center"> <span class="alert-heading">{{error}}</span></div>
+                            <div v-for="error of errors" class="text-center"> <span class="alert-heading" style="font-weight: bold;">{{error}}</span></div>
                         </div>
                         <form>
                         <fieldset class="form-group">
@@ -618,7 +618,7 @@ Vue.component('playlist', {
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal" @click="insert">Insert</button>
+                        <button type="button" class="btn btn-primary" @click="insert">Insert</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal" @click="clear">Close</button>
                     </div>
                     </div>
@@ -646,8 +646,10 @@ Vue.component('playlist', {
     methods: {
         ...Vuex.mapActions(['get_list', 'update_state', 'delete_video', 'hide_show_video', 'insert_video']),
         clear() {
+            this.errors = [];
             this.video_name = '';
             this.video_link = '';
+
         },
         isSelected(id, name, event) {
             if (event.target.checked) {
@@ -825,10 +827,14 @@ Vue.component('playlist', {
             }
         },
     },
+    mounted() {
+        $(this.$refs.insert_video).on("hidden.bs.modal", this.clear)
+    },
     created() {
         var id = decodeURIComponent(escape(window.atob(location.search.split('&')[location.search.split('&').length - 1].split('=')[1])));
         this.playlist.id = id;
         this.get_list({ action: 'get_playlist_by_id', id: id, option: 'videos' });
+        console.log(this.$refs);
     },
     beforeUpdate() {
         var id = this.playlist.id;

@@ -95,7 +95,7 @@ Vue.component('video_player', {
                 </div>
                 <div class="modal-body">
                     <div class="c-video" v-if="check_link(video.link)">
-                    <iframe class="video-player" height="432" :src="video.link" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                    <iframe class="video-player" height="432" :src="video.link" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <div class="c-video" v-else>
                         <video class="video-player" :src="video.link" controls></video>
@@ -121,7 +121,7 @@ Vue.component('video_player', {
             $("#myModal").modal('hide');
         },
         check_link(link) {
-            var provider = link.match(new RegExp(/https:\/\/(?:www.)?(?:(vimeo).com\/(.*)|(youtube).com\/(.*))/));
+            var provider = link.match(new RegExp(/https:\/\/(?:www.)?(?:(player.vimeo).com\/(.*)|(youtube).com\/(.*))/));
             return provider;
         }
     },
